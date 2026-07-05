@@ -1,0 +1,50 @@
+#array in python is same as list
+
+>It's used to store multiple elements in one list.
+>It's same like as list.
+>we should used to store elements inside of square bracket[]
+
+>we can access(printing) the elements using index
+
+
+a=[1,2,3]
+b=[4,5,6]
+c=a+b
+d=a*3 
+print(d)  #[1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
+print(c) #[1,2,3,4,5,6]
+
+#if you want to print length of list we can use len() operation
+print(len(a))  # 3
+
+#inserting elements into a list
+#append operation only inserts a elements in last index of the list
+a.append(4)
+print(a)  #[1, 2, 3, 4]
+
+#if you want to insert a set of list into a list you can use extend() operation
+a.extend(b)
+print(a) #[1, 2, 3, 4, 5, 6]
+
+#if you want to insert a new element on specific index you can use insert() operation
+a.insert(1,4)
+print(a)  #[1, 4, 2, 3]
+
+#empty or clear the list
+a.clear()
+print(a)  #[]
+
+#to count a specific element how many times filled in the list
+a=[1,2,3,4,6,6,4]
+print(a.count(4)) # 2 
+
+#pop
+a.pop() #if you want to pop a specific index you can also use like this a.pop(2)
+print(a) #[23, 43, 4, 56]
+
+#remove
+a.remove() #you should remove a element using value of element
+print(a)
+
+#index
+print("Index",list.index(3)) # 2
