@@ -1,0 +1,37 @@
+class Node:
+    def __init__(self,data=None,next=None):
+        self.data=data
+        self.next=next
+class linked_list:
+    def __init__(self):
+        self.head=None
+    def insert_at_begin(self,data):
+        
+        node=Node(data,self.head)
+        self.head=node
+        
+    def print(self):
+        if self.head is None:
+            print("Linked list is empty")
+            return
+        lst=self.head
+        lt=""
+        while lst:
+            lt+=str(lst.data)+"-->"
+            lst=lst.next
+        print(lt)
+    def insert_at_end(self,data):
+        if self.head is None:
+            node=Node(data,None)
+            self.head=node
+            return
+        lst=self.head
+        while lst.next:
+            lst=lst.next
+        lst.next=Node(data,None)
+        
+ll=linked_list()
+ll.insert_at_begin(12)
+ll.insert_at_begin(23)
+ll.insert_at_end(243)
+ll.print()
