@@ -15,11 +15,11 @@ class linked_list:
             print("Linked list is empty")
             return
         lst=self.head
-        lt=""
+        
         while lst:
-            lt+=str(lst.data)+"-->"
+            print(lst.data,"-->",end="")
             lst=lst.next
-        print(lt)
+        
     def insert_at_end(self,data):
         if self.head is None:
             node=Node(data,None)
@@ -29,9 +29,13 @@ class linked_list:
         while lst.next:
             lst=lst.next
         lst.next=Node(data,None)
-        
+    def insert_list(self,lst):
+        for data in lst:
+             self.insert_at_end(data)
 ll=linked_list()
 ll.insert_at_begin(12)
 ll.insert_at_begin(23)
+b=["titus","kesya","solomon","baby","jacob"]
+ll.insert_list(b)
 ll.insert_at_end(243)
 ll.print()
