@@ -1,0 +1,38 @@
+>Queue follows First in First out (FIFO)principle
+>which enters first into a list,that will return (out) an first of the list
+>example: like a real queue in people who enters first in ticket counter,who will get ticket as first
+
+
+
+#program
+from collections import deque
+
+class Deque:
+    def __init__(self):
+        self.queue = deque()
+
+    def enqeue(self, data):           #pop() operation returns as output as which element enters as a last
+        self.queue.appendleft(data)   #this appendleft operation used to store elements in left side of list
+                                       #in this place we use appendleft because we want to return(out) the first element which enters into list
+
+    def deqeue(self):
+        return self.queue.pop()
+
+    def isempty(self):
+        return len(self.queue) == 0
+
+    def size(self):
+        return len(self.queue)
+
+    def display(self):
+        print(self.queue)
+
+a = Deque()
+
+a.enqeue(23)
+a.enqeue(45)
+a.enqeue(34)   # Corrected
+
+a.display()
+
+
