@@ -1,0 +1,47 @@
+class Node:
+    def __init__(self, data=None, next=None):
+        self.data = data
+        self.next = next
+
+class linkedlist:
+    def __init__(self):
+        self.head = None
+
+    def insertatbegin(self, data):
+        self.head = Node(data, self.head)
+
+    def print(self):
+        if self.head is None:
+            print("linked list is empty")
+            return
+        temp = self.head
+        while temp:
+            print(temp.data, "->", end="")
+            temp = temp.next
+        print()
+
+    def insertatend(self, data):
+        if self.head is None:
+            self.head = Node(data, None)
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = Node(data, None)
+
+    def spec(self, data, index):
+        temp = self.head
+        i = 0
+        while i < index - 1:
+            temp = temp.next
+            i = i + 1
+        new = Node(data, None)
+        new.next = temp.next
+        temp.next = new
+
+ll = linkedlist()
+b = [12, 34, 57, 78, 34]
+for i in b:
+    ll.insertatend(i)
+ll.spec(45, 2)
+ll.print()
