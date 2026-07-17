@@ -1,0 +1,62 @@
+class Node:
+    def __init__(self,data=None,next=None):
+        self.data=data
+        self.next=next
+class linkedlist:
+    def __init__(self):
+        self.head=None
+    def insert(self,data):
+        if self.head is None:
+            self.head=Node(data,None)
+            return
+        temp=self.head
+        while temp.next:
+            temp=temp.next
+        temp.next=Node(data,None)
+        
+    def deleteatbegin(self):
+        if self.head is None:
+            print("Empty")
+        self.head=self.head.next
+        
+    def deleteatend(self):
+        if self.head is None:
+            print("Linked list is empty")
+        if self.head.next is None:
+            self.head=None
+            return
+        temp=self.head
+        while temp.next.next:
+            temp=temp.next
+        temp.next=None
+        
+    def deletebyvalue(self,value):
+        if self.head is None:
+            print("empty")
+            return
+        if self.head.next is None:
+            self.head=None
+            return
+        temp=self.head
+        while temp.next:
+            if temp.next.data==value:
+                temp.next=temp.next.next
+            temp=temp.next
+            
+    def print(self):
+        if self.head is None:
+            print("linked list is empty")
+            return
+        temp=self.head
+        while temp:
+                print(temp.data,"->",end="")
+                temp=temp.next
+ll=linkedlist()
+b=[23,46,87,43,12,45]
+for data in b:
+    ll.insert(data)
+ll.print()
+ll.deletev(12)
+ll.delete()
+print("\n")
+ll.print()
